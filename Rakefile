@@ -8,7 +8,7 @@ Hoe.new('transmogrify', Transmogrify::VERSION) do |p|
   p.rubyforge_name = 'seattlerb'
 
   p.developer('Ryan Davis', 'ryand-ruby@zenspider.com')
-  p.developer('Rein Henrichs', 'reinh@reinh.com') # FIX
+  p.developer('Rein Henrichs', 'reinh@reinh.com')
 end
 
 # vim: syntax=Ruby
