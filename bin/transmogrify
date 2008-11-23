@@ -1,1 +1,10 @@
-# bin
+#!/usr/bin/ruby -w
+
+require 'transmogrify'
+
+trans = Transmogrify.new
+trans.run ARGV
+trans.report
+
+exit 0
+
