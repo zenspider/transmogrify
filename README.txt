@@ -1,32 +1,47 @@
 = transmogrify
 
-* FIX (url)
+* http://github.com/zenspider/transmogrify/tree/master
+* http://rubyforge.org/projects/seattlerb
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Transmogrify unfactors your code, providing you with much needed job
+security it today's volatile economy.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* Transmogrify rewrites your code using Advanced Technology(tm).
+* Um... and stuff.
+
+== TODO/IDEAS
+
+* loop unrolling
+* hash -> array conversion
+* variable renaming (doucheNN)
+* namespacing
+* unnamespacing
+* comment removal
+* project restructuring
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+  % transmogrify lib/blah.rb
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* ruby2ruby
+* sexp_processor
+* ruby_parser
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* sudo gem install transmogrify
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2008 FIX
+Copyright (c) 2008 Ryan Davis, Rein Henrichs
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
