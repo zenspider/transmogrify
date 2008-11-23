@@ -1,0 +1,9 @@
+# -*- ruby -*-
+
+require 'autotest/restart'
+
+Autotest.add_hook :initialize do |at|
+  %w(sexp_processor ruby_parser ruby2ruby).each do |project|
+    at.libs << File.expand_path("~/Work/p4/zss/src/#{project}/dev/lib:")
+  end
+end
