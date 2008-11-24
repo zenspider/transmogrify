@@ -26,6 +26,7 @@ security in today's volatile economy.
 * comment removal
 * comment addition
 * project restructuring
+* randomize method order
 
 == SYNOPSIS:
 
