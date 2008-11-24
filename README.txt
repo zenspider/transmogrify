@@ -33,6 +33,8 @@ security in today's volatile economy.
   * rakefile obfuscation - convolute the build and running tests etc.
   * ungemification
 * randomize method order
+* combinations of builders (rot13 a douchified name, etc)
+* math identities (*1, +0) and other fun, pi=3
 
 == SYNOPSIS:
 
