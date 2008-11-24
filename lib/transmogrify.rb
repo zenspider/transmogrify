@@ -15,16 +15,21 @@ class Transmogrify < SexpProcessor
     super()
 
     @r2r = Ruby2Ruby.new
+    @ivars = {}
     @lvars = {}
   end
 
+  def new_ivar(name)
+    @ivars[name] = :"@#{transmogrify(name)}" # TODO: LAME
+  end
+
   def new_lvar(name)
-    transmogrify(name)
+    @lvars[name] = transmogrify(name)
   end
 
   def rewrite_args exp
     name = exp[1]
-    exp[1] = @lvars[name] = new_lvar(name)
+    exp[1] = new_lvar(name)
     exp
   end
 
@@ -32,15 +37,27 @@ class Transmogrify < SexpProcessor
     s(:not, s(:not, s(:not, s(:lit, 33))))
   end
 
+  def rewrite_iasgn exp
+    name = exp[1]
+    exp[1] = @ivars[name] || new_ivar(name)
+    exp
+  end
+
   def rewrite_lasgn exp
     name = exp[1]
-    exp[1] = @lvars[name] = new_lvar(name)
+    exp[1] = @lvars[name] || new_lvar(name)
     exp
   end
 
   def rewrite_lvar exp
     name = exp[1]
-    exp[1] = @lvars[name]
+    exp[1] = @lvars[name] || new_ivar(name)
+    exp
+  end
+
+  def rewrite_ivar exp
+    name = exp[1]
+    exp[1] = @ivars[name] || new_ivar(name)
     exp
   end
 
