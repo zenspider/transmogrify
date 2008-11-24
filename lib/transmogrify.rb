@@ -40,6 +40,14 @@ class Transmogrify < SexpProcessor
     transmogrify(name)
   end
 
+  def rewrite_true exp
+    s(:not, s(:not, s(:lit, 33)))
+  end
+
+  def rewrite_false exp
+    s(:not, s(:not, s(:not, s(:lit, 33))))
+  end
+
   def run files_and_dirs
     files_and_dirs.each do |file_or_dir|
       if File.file? file_or_dir then
