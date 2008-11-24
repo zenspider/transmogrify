@@ -18,6 +18,12 @@ class Transmogrify < SexpProcessor
     @lvars = {}
   end
 
+  def rewrite_args exp
+    name = exp[1]
+    exp[1] = @lvars[name] = new_lvar(name)
+    exp
+  end
+
   def rewrite_lasgn exp
     name = exp[1]
     exp[1] = @lvars[name] = new_lvar(name)
