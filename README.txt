@@ -21,15 +21,17 @@ security in today's volatile economy.
 
 * loop unrolling
 * hash -> array conversion
-* variable renaming (piglatin)
 * misuse of raise/rescue, try/catch
 * replace true/false with variants of !!?!
 * private method renaming 
 * namespacing
 * unnamespacing
-* comment removal
+* renamespacing
+* comment removal - this is done via r2r whether we like it or not atm
 * comment addition
 * project restructuring
+  * rakefile obfuscation - convolute the build and running tests etc.
+  * ungemification
 * randomize method order
 
 == SYNOPSIS:
