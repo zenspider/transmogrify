@@ -3,19 +3,24 @@ require 'ruby2ruby'
 require 'sexp_processor'
 require 'ruby_parser'
 
+$:.unshift File.dirname(__FILE__)
+require 'transmogrifiers/douchy_numbers'
+require 'transmogrifiers/piglatin'
+
 class Transmogrify < SexpProcessor
+  include Transmogrifiers
   VERSION = '1.0.0'
 
-  def initialize
-    super
+  def initialize(transmogrifier)
+    extend transmogrifier
+    super()
 
-    @lvar_count = 0
     @lvars = {}
   end
 
   def rewrite_lasgn exp
     name = exp[1]
-    exp[1] = @lvars[name] = new_lvar
+    exp[1] = @lvars[name] = new_lvar(name)
     exp
   end
 
@@ -25,8 +30,7 @@ class Transmogrify < SexpProcessor
     exp
   end
 
-  def new_lvar
-    @lvar_count += 1
-    :"douche#{'%02d' % @lvar_count}"
+  def new_lvar(name)
+    name
   end
 end
