@@ -18,10 +18,18 @@ class Transmogrify < SexpProcessor
     @lvars = {}
   end
 
+  def new_lvar(name)
+    transmogrify(name)
+  end
+
   def rewrite_args exp
     name = exp[1]
     exp[1] = @lvars[name] = new_lvar(name)
     exp
+  end
+
+  def rewrite_false exp
+    s(:not, s(:not, s(:not, s(:lit, 33))))
   end
 
   def rewrite_lasgn exp
@@ -36,16 +44,8 @@ class Transmogrify < SexpProcessor
     exp
   end
 
-  def new_lvar(name)
-    transmogrify(name)
-  end
-
   def rewrite_true exp
     s(:not, s(:not, s(:lit, 33)))
-  end
-
-  def rewrite_false exp
-    s(:not, s(:not, s(:not, s(:lit, 33))))
   end
 
   def run files_and_dirs
