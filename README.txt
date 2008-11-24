@@ -11,7 +11,11 @@ security in today's volatile economy.
 == FEATURES/PROBLEMS:
 
 * Transmogrify rewrites your code using Advanced Technology(tm).
-* Um... and stuff.
+  * lvar renaming:
+    * numbered sequences
+    * pig latin
+    * rot13
+* transmogrify command line tool transmogrifies and replaces the old code!
 
 == TODO/IDEAS
 
