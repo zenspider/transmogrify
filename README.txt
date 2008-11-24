@@ -16,6 +16,7 @@ security in today's volatile economy.
     * pig latin
     * rot13
   * replace true and false with !!?! and !!!?!
+  * combinations of builders (rot13 a douchified name, etc)
 * transmogrify command line tool transmogrifies and replaces the old code!
 
 == TODO/IDEAS
@@ -23,7 +24,6 @@ security in today's volatile economy.
 * loop unrolling
 * hash -> array conversion
 * misuse of raise/rescue, try/catch
-* replace true/false with variants of !!?!
 * private method renaming 
 * namespacing
 * unnamespacing
@@ -34,7 +34,6 @@ security in today's volatile economy.
   * rakefile obfuscation - convolute the build and running tests etc.
   * ungemification
 * randomize method order
-* combinations of builders (rot13 a douchified name, etc)
 * math identities (*1, +0) and other fun, pi=3
 * replace real word variables with antonyms
 
