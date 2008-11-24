@@ -61,6 +61,19 @@ class TestTransmogrify < Test::Unit::TestCase
     assert_equal expected, actual
   end
 
+  def test_rewrite_lvar_with_douchy_numbers_and_piglatin
+    expected = s(:block,
+                 s(:lasgn, :oucheday01, s(:lit, 1)),
+                 s(:lasgn, :oucheday02, s(:str, "string")),
+                 s(:call, nil, :puts, s(:arglist, s(:lvar, :oucheday01))),
+                 s(:call, nil, :puts, s(:arglist, s(:lvar, :odoucheday02))))
+
+    trans = Transmogrify.new(DouchyNumbers, Piglatin)
+    actual = trans.process @lvar_sexp
+
+    assert_equal expected, actual
+  end
+
   def test_rewrite_lvar_defn_args
     expected = s(:defn, :x, s(:args, :douche01),
                  s(:scope,
