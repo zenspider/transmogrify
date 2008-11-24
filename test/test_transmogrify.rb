@@ -28,6 +28,17 @@ class TestTransmogrify < Test::Unit::TestCase
                        s(:lasgn, :y, s(:lit, 42)),
                        s(:call, s(:lvar, :y), :+,
                          s(:arglist, s(:lvar, :arg))))))
+
+  #  @number = 1
+  #  @string = 'string'
+  #  puts @number
+  #  puts @string
+
+    @iasgn_sexp = s(:block,
+                    s(:iasgn, :@number, s(:lit, 1)),
+                    s(:iasgn, :@string, s(:str, "string")),
+                    s(:call, nil, :puts, s(:arglist, s(:ivar, :@number))),
+                    s(:call, nil, :puts, s(:arglist, s(:ivar, :@string))))
   end
 
   def test_rewrite_lvar_with_douchy_numbers
@@ -53,6 +64,18 @@ class TestTransmogrify < Test::Unit::TestCase
 
     trans = Transmogrify.new(DouchyNumbers)
     actual = trans.process @defn_sexp
+
+    assert_equal expected, actual
+  end
+
+  def test_rewrite_ivar_with_douchy_numbers
+    expected = s(:block,
+                 s(:iasgn, :@douche01, s(:lit, 1)),
+                 s(:iasgn, :@douche02, s(:str, "string")),
+                 s(:call, nil, :puts, s(:arglist, s(:ivar, :@douche01))),
+                 s(:call, nil, :puts, s(:arglist, s(:ivar, :@douche02))))
+    trans = Transmogrify.new(DouchyNumbers)
+    actual = trans.process @iasgn_sexp
 
     assert_equal expected, actual
   end
