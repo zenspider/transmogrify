@@ -20,4 +20,6 @@ Hoe.new('transmogrify', Transmogrify::VERSION) do |p|
   p.extra_deps << 'ruby2ruby'
 end
 
+# TODO: need rules so that transmogrify transforms itself
+
 # vim: syntax=Ruby
