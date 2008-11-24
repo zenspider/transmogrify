@@ -6,7 +6,7 @@
 == DESCRIPTION:
 
 Transmogrify unfactors your code, providing you with much needed job
-security it today's volatile economy.
+security in today's volatile economy.
 
 == FEATURES/PROBLEMS:
 
@@ -17,10 +17,14 @@ security it today's volatile economy.
 
 * loop unrolling
 * hash -> array conversion
-* variable renaming (doucheNN)
+* variable renaming (piglatin)
+* misuse of raise/rescue, try/catch
+* replace true/false with variants of !!?!
+* private method renaming 
 * namespacing
 * unnamespacing
 * comment removal
+* comment addition
 * project restructuring
 
 == SYNOPSIS:
