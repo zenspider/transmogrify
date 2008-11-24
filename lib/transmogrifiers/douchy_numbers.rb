@@ -1,10 +1,11 @@
 module Transmogrifiers
   module DouchyNumbers
+    private
 
-  def new_lvar(name)
-    @lvar_count ||= 0
-    @lvar_count += 1
-    :"douche#{'%02d' % @lvar_count}"
-  end
+    def transmogrify(name)
+      @count ||= 0
+      @count += 1
+      :"douche#{'%02d' % @count}"
+    end
   end
 end

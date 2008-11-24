@@ -31,6 +31,12 @@ class Transmogrify < SexpProcessor
   end
 
   def new_lvar(name)
+    transmogrify(name)
+  end
+
+  private
+
+  def transmogrify(name)
     name
   end
 end

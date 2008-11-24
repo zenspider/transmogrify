@@ -8,21 +8,21 @@ class TestPiglatin < Test::Unit::TestCase
     actual    = :asshole
     expected = :assholeway
 
-    assert_equal pig_latinize(actual), expected
+    assert_equal transmogrify(actual), expected
   end
 
   def test_convert_word_with_leading_consonant
     actual    = :douche
     expected = :oucheday
 
-    assert_equal pig_latinize(actual), expected
+    assert_equal transmogrify(actual), expected
   end
 
   def test_convert_word_with_multiple_leading_consonants
     actual    = :stripper
     expected = :ipperstray
 
-    assert_equal pig_latinize(actual), expected
+    assert_equal transmogrify(actual), expected
   end
 
 end
