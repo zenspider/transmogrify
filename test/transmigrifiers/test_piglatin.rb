@@ -5,24 +5,24 @@ class TestPiglatin < Test::Unit::TestCase
   include Transmogrifiers::Piglatin
 
   def test_convert_word_with_leading_vowel
-    given    = :asshole
+    actual    = :asshole
     expected = :assholeway
 
-    assert_equal pig_latinize(given), expected
+    assert_equal pig_latinize(actual), expected
   end
 
   def test_convert_word_with_leading_consonant
-    given    = :douche
+    actual    = :douche
     expected = :oucheday
 
-    assert_equal pig_latinize(given), expected
+    assert_equal pig_latinize(actual), expected
   end
 
   def test_convert_word_with_multiple_leading_consonants
-    given    = :stripper
+    actual    = :stripper
     expected = :ipperstray
 
-    assert_equal pig_latinize(given), expected
+    assert_equal pig_latinize(actual), expected
   end
 
 end
