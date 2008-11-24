@@ -11,10 +11,11 @@ security in today's volatile economy.
 == FEATURES/PROBLEMS:
 
 * Transmogrify rewrites your code using Advanced Technology(tm).
-  * lvar renaming:
+  * lvar and ivar renaming:
     * numbered sequences
     * pig latin
     * rot13
+  * replace true and false with !!?! and !!!?!
 * transmogrify command line tool transmogrifies and replaces the old code!
 
 == TODO/IDEAS
@@ -35,6 +36,7 @@ security in today's volatile economy.
 * randomize method order
 * combinations of builders (rot13 a douchified name, etc)
 * math identities (*1, +0) and other fun, pi=3
+* replace real word variables with antonyms
 
 == SYNOPSIS:
 
