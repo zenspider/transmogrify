@@ -4,6 +4,7 @@ require 'sexp_processor'
 require 'ruby_parser'
 require 'transmogrifiers/douchy_numbers'
 require 'transmogrifiers/piglatin'
+require 'transmogrifiers/rot13'
 
 class Transmogrify < SexpProcessor
   include Transmogrifiers

@@ -1,26 +1,26 @@
 require 'test/unit'
 require 'transmogrify'
 
-class TestPiglatin < Test::Unit::TestCase
-  include Transmogrifiers::Piglatin
+class TestRot13 < Test::Unit::TestCase
+  include Transmogrifiers::Rot13
 
   def test_convert_word_with_leading_vowel
     actual    = :asshole
-    expected = :assholeway
+    expected  = :nffubyr
 
     assert_equal expected, transmogrify(actual)
   end
 
   def test_convert_word_with_leading_consonant
     actual    = :douche
-    expected = :oucheday
+    expected  = :qbhpur
 
     assert_equal expected, transmogrify(actual)
   end
 
   def test_convert_word_with_multiple_leading_consonants
     actual    = :stripper
-    expected = :ipperstray
+    expected  = :fgevccre
 
     assert_equal expected, transmogrify(actual)
   end
