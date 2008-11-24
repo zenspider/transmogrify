@@ -1,7 +1,5 @@
 module Transmogrifiers
   module DouchyNumbers
-    private
-
     def transmogrify(name)
       @count ||= 0
       @count += 1

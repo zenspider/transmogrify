@@ -1,10 +1,11 @@
 #!/usr/bin/ruby -w
 
+p $:
+
 require 'transmogrify'
 
-trans = Transmogrify.new
+trans = Transmogrify.new Transmogrifiers::DouchyNumbers
 trans.run ARGV
-trans.report
 
 exit 0
 

@@ -1,7 +1,5 @@
 module Transmogrifiers
   module Piglatin
-    private
-
     def transmogrify(name)
       name = name.to_s
       if match = name.match(/^[^aeiou]+/)
@@ -13,5 +11,4 @@ module Transmogrifiers
       :"#{name}ay"
     end
   end
-
 end
