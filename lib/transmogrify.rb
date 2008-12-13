@@ -10,8 +10,8 @@ class Transmogrify < SexpProcessor
   include Transmogrifiers
   VERSION = '1.0.0'
 
-  def initialize(transmogrifier)
-    extend transmogrifier
+  def initialize(*transmogrifiers)
+    transmogrifiers.each {|transmogrifier| extend transmogrifier}
     super()
 
     @r2r = Ruby2Ruby.new

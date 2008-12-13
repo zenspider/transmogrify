@@ -1,7 +1,7 @@
 module Transmogrifiers
   module Piglatin
     def transmogrify(name)
-      name = name.to_s
+      name = super.to_s
       append_string = ''
 
       if match = name.match(/\d+$/)
