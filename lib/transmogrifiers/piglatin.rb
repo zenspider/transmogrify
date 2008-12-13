@@ -11,7 +11,7 @@ module Transmogrifiers
       if match = name.match(/^[^aeiou]+/i)
         name = match.post_match + match[0]
       else
-        name = name + 'w'
+        name << 'w'
       end
 
       name.downcase!.capitalize! if name.match(/[A-Z]/)
