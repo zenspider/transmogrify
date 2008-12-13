@@ -66,7 +66,7 @@ class TestTransmogrify < Test::Unit::TestCase
                  s(:lasgn, :oucheday01, s(:lit, 1)),
                  s(:lasgn, :oucheday02, s(:str, "string")),
                  s(:call, nil, :puts, s(:arglist, s(:lvar, :oucheday01))),
-                 s(:call, nil, :puts, s(:arglist, s(:lvar, :odoucheday02))))
+                 s(:call, nil, :puts, s(:arglist, s(:lvar, :oucheday02))))
 
     trans = Transmogrify.new(DouchyNumbers, Piglatin)
     actual = trans.process @lvar_sexp
