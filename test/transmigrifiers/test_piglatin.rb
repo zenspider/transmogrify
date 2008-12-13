@@ -2,41 +2,27 @@ require 'test/unit'
 require 'transmogrify'
 
 class TestPiglatin < Test::Unit::TestCase
-  include Transmogrifiers::Piglatin
-
-  def test_convert_word_with_leading_vowel
-    actual    = :asshole
-    expected = :assholeway
-
-    assert_equal expected, transmogrify(actual)
+  def transmogrifier
+    Transmogrify.new(Transmogrifiers::Piglatin)
   end
+  private :transmogrifier
 
-  def test_convert_word_with_leading_consonant
-    actual    = :douche
-    expected = :oucheday
-
-    assert_equal expected, transmogrify(actual)
+  def assert_piglatin_equal(args = {})
+    args.each do |before, after|
+      assert_equal after, transmogrifier.transmogrify(before)
+    end
   end
+  private :assert_piglatin_equal
 
-  def test_convert_word_with_multiple_leading_consonants
-    actual    = :stripper
-    expected  = :ipperstray
-
-    assert_equal expected, transmogrify(actual)
+  def test_piglatin_conversions
+    assert_piglatin_equal({
+      :asshole  => :assholeway,
+      :douche   => :oucheday,
+      :stripper => :ipperstray,
+      :Asshole  => :Assholeway,
+      :Douche   => :Oucheday,
+      :Stripper => :Ipperstray,
+      :foo01    => :oofay01,
+    })
   end
-
-  def test_convert_word_with_initial_capital
-    actual    = :Stripper
-    expected  = :Ipperstray
-
-    assert_equal expected, transmogrify(actual)
-
-    actual    = :Asshole
-    expected  = :Assholeway
-
-    assert_equal expected, transmogrify(actual)
-  end
-
-
-
 end
