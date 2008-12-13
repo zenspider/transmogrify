@@ -2,6 +2,12 @@ module Transmogrifiers
   module Piglatin
     def transmogrify(name)
       name = name.to_s
+      append_string = ''
+
+      if match = name.match(/\d+$/)
+        name, append_string = match.pre_match, match[0]
+      end
+
       if match = name.match(/^[^aeiou]+/i)
         name = match.post_match + match[0]
       else
@@ -10,7 +16,7 @@ module Transmogrifiers
 
       name = name.downcase.capitalize if name.match(/[A-Z]/)
 
-      :"#{name}ay"
+      :"#{name}ay#{append_string}"
     end
   end
 end
