@@ -14,7 +14,7 @@ module Transmogrifiers
         name = name + 'w'
       end
 
-      name = name.downcase.capitalize if name.match(/[A-Z]/)
+      name.downcase!.capitalize! if name.match(/[A-Z]/)
 
       :"#{name}ay#{append_string}"
     end
