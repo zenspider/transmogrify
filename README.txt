@@ -29,7 +29,7 @@ security in today's volatile economy.
 * unnamespacing
 * renamespacing
 * comment removal - this is done via r2r whether we like it or not atm
-* comment addition
+* comment addition "does the thing to the stuff" "TODO: do the thing" "FIX"
 * project restructuring
   * rakefile obfuscation - convolute the build and running tests etc.
   * ungemification
